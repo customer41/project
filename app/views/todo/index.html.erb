@@ -1,0 +1,27 @@
+<h1>Задачи <button id='add_task'>+</button></h1>
+
+<% @projects.each do |project| %>
+	<h2><%= project.title %><h2>
+	<ul>
+		<% project.todos.each do |todo| %>
+			<li><%= todo.text %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<div style="visibility: hidden" id="new_task">
+	<h3>Новая задача</h3>
+
+	<%= form_for :task, :html => {:id=>'form_task'}, url: todo_create_path do |form| %>
+	  	<p>
+	    	<%= form.text_field :text, placeholder: 'Новая задача' %>
+	  	</p>
+	  	<div>
+	  		<%= form.select :project_id, @projects.map {|u| [u.title, u.id]} %>
+	  	</div>
+	  	<p>
+	  		<%= link_to 'ОТМЕНА', '#', id: 'task_cancel' %>
+	  		<%= link_to 'ОК', '#', :onclick=>"document.getElementById('form_task').submit()" %>
+	  	</p>
+	<% end %>
+</div>

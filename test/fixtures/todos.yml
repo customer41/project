@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyText
+  isCompleted: 
+  project: one
+
+two:
+  text: MyText
+  isCompleted: 
+  project: two
