@@ -11,7 +11,8 @@
 					<h5><%= project.title %></h5>
 					<hr>
 					<ul>
-						<% project.todos.each do |todo| %>
+						<% @todos = project.todos.order(id: :asc).all %>
+						<% @todos.each do |todo| %>
 				  			<li>
 				  				<%= form_for :todo, :html => {:id=>'form_todo'}, url: '/todo/' + todo.id.to_s + '/update', method: 'get' do |form| %>
 				  					<% if todo.isCompleted == true then %>

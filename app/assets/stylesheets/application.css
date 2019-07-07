@@ -15,6 +15,7 @@
  *= require vendor/icheck-1.x/skins/square/blue.css
  *= require vendor/select2-develop/dist/css/select2.css
  */
+
 @font-face {
 	font-family: 'OpenSans';
 	src: url('OpenSans-Light.ttf') format('truetype');
