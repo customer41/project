@@ -1,5 +1,5 @@
 projects:
- - title: 'Семья'
+ - title: 'СЕМЬЯ'
    todos:
     - text: 'Купить молоко'
       isCompleted: false
@@ -11,7 +11,7 @@ projects:
       isCompleted: false
     - text: 'Забрать обувь из ремонта'
       isCompleted: false
- - title: 'Работа'
+ - title: 'РАБОТА'
    todos:
     - text: 'Позвонить заказчику'
       isCompleted: true
@@ -19,7 +19,7 @@ projects:
       isCompleted: true
     - text: 'Заполнить отчет'
       isCompleted: false
- - title: 'Прочее'
+ - title: 'ПРОЧЕЕ'
    todos:
     - text: 'Позвонить другу'
       isCompleted: false

@@ -11,7 +11,9 @@
 // about supported directives.
 //= require jquery
 //= require rails-ujs
-// require_tree .
+//= require vendor/icheck-1.x/icheck
+//= require vendor/select2-develop/dist/js/select2.js
+//  require_tree
 
 $(document).ready(function() {
 	$('#add_task').on('click', function() {
@@ -21,4 +23,29 @@ $(document).ready(function() {
 	$('#task_cancel').on('click', function() {
 		$('#new_task').css('visibility','hidden');
 	})
+
+	$('input:checkbox').iCheck({
+		checkboxClass: 'icheckbox_square-blue',
+		checkedClass: 'checked',
+	});
+
+	$(':checkbox').on('ifChecked', function(event) {
+		//$(':checked').parents('li').children('span').css('text-decoration', 'line-through');
+		$(this).parents('#form_todo').submit();
+
+	});
+
+	$(':checkbox').on('ifUnchecked', function(event) {
+		//$(':checkbox').parents('li').children('span').css('text-decoration', 'none');
+		$(this).parents('#form_todo').submit();
+	});
+
+	$('div .checked').next('span').css('text-decoration', 'line-through');
+
+	$('#task_project_id').select2({
+		minimumResultsForSearch: -1,
+		width: '360px',
+	});
+
 });
+

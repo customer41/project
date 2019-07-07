@@ -4,6 +4,14 @@ class TodoController < ApplicationController
   end
 
   def update
+    @todo = Todo.find(params[:id])
+    if @todo.isCompleted == false then
+      @todo.isCompleted = true
+    elsif @todo.isCompleted == true then
+      @todo.isCompleted = false
+    end
+    @todo.save
+    redirect_to '/'
   end
 
   def create
